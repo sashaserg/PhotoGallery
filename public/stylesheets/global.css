@@ -1,0 +1,91 @@
+html, body {
+  width: 100%;
+  height: 100%; }
+
+.navbar {
+  border-radius: 0px; }
+
+.PE {
+  margin-bottom: 60px;
+  border: 1px solid #ccc;
+  border-radius: 8px; }
+
+.PEHeader {
+  background-color: white;
+  padding: 10px 5px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px; }
+
+.PEHeader div {
+  display: inline-block; }
+
+.PEHeader a img {
+  width: 30px;
+  height: 30px; }
+
+.PEHUserImage {
+  margin-left: 10px; }
+
+.PEHUserNickname {
+  margin-left: 10px; }
+
+.PEBody {
+  background-color: antiquewhite; }
+
+.PEBody a img {
+  width: 100%; }
+
+.PEBSymbol, .PEBLikesCount, .PEBUserComments {
+  padding: 10px 16px; }
+
+.PEFooter .form-group {
+  margin-bottom: 0px; }
+
+.PEFooter .form-group-lg .form-control {
+  border-radius: 0;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px; }
+
+#UPHeader {
+  margin-top: 30px; }
+
+#UPHUserPhoto {
+  background-color: mediumvioletred; }
+
+#UPHUserInfo {
+  background-color: blanchedalmond; }
+
+#UPHUserPhoto img {
+  width: 150px;
+  height: 150px;
+  display: block;
+  margin: 0 auto; }
+
+#UPBody {
+  margin-top: 20px; }
+
+#UPBody img {
+  width: 100%; }
+
+#UPBody hr {
+  border-top: 1px solid #c26b64; }
+
+.Login {
+  padding: 60px 0; }
+
+.Login form {
+  margin: 0 auto;
+  max-width: 320px; }
+
+body {
+  background-color: aliceblue; }
+
+#center {
+  float: unset;
+  margin-left: auto;
+  margin-right: auto; }
+
+#PhotosList {
+  padding-top: 40px; }
+
+/*# sourceMappingURL=global.css.map */

@@ -1,0 +1,49 @@
+.PE{
+  margin-bottom: 60px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.PEHeader{
+  background-color: white;
+  padding: 10px 5px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.PEHeader div{
+  display: inline-block;
+}
+.PEHeader a img{
+  width: 30px;
+  height: 30px;
+}
+.PEHUserImage{
+  margin-left: 10px;
+}
+.PEHUserNickname{
+  margin-left: 10px;
+}
+
+.PEBody{
+  background-color: antiquewhite;
+}
+
+.PEBody a img{
+  width: 100%;
+}
+
+.PEBSymbol, .PEBLikesCount, .PEBUserComments{
+  padding: 10px 16px;
+}
+
+.PEFooter{
+
+}
+.PEFooter .form-group{
+  margin-bottom: 0px;
+}
+.PEFooter .form-group-lg .form-control{
+  border-radius: 0;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}

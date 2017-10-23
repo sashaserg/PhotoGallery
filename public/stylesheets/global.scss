@@ -1,0 +1,19 @@
+@import "reset";
+@import "HeaderBar/HeaderBar";
+@import "IndexPage/IndexPage";
+@import "PostElement/PostElement";
+@import "UserProfile/UserProfile";
+@import "Login/Login";
+
+body{
+  background-color: aliceblue;
+}
+#center{
+  float: unset;
+  margin-left: auto;
+  margin-right: auto;
+  //padding-top: 45px;
+}
+#PhotosList{
+  padding-top: 40px;
+}
