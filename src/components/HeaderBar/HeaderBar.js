@@ -48,28 +48,25 @@ class HeaderBar extends Component
                                         </NavItem>
                                     </LinkContainer>
 
-
-                                        <NavItem>
-                                            <span>Добавить фото</span>
-                                        </NavItem>
-
-
                                 </Nav>
-
-
-
-
+                                
                                 <Nav pullRight>
 
                                     <LinkContainer  to={'/user/1'}>
                                         <NavItem>
-                                            <span>Никнейм профиля</span>
+                                            <span>Никнейм</span>
                                         </NavItem>
                                     </LinkContainer>
 
                                     <LinkContainer  to={'/login'}>
                                         <NavItem>
-                                            <span>Выйти зайти</span>
+                                            <span>Выйти/Зайти</span>
+                                        </NavItem>
+                                    </LinkContainer>
+
+                                    <LinkContainer  to={'/login'}>
+                                        <NavItem>
+                                            <span>Регистрация</span>
                                         </NavItem>
                                     </LinkContainer>
 

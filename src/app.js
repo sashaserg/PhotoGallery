@@ -8,6 +8,7 @@ import IndexPage from './components/IndexPage/IndexPage'
 import UserProfile from './components/UserProfile/UserProfile'
 import BestPage from './components/BestPage/BestPage'
 import Login from './components/Login/Login'
+import AddPhotoButton from "./components/AddPhotoButton/AddPhotoButton";
 
 
 class App extends Component
@@ -25,6 +26,7 @@ class App extends Component
                        <Route exact path = '/user/:id' component={UserProfile}/>
                        <Route exact path = "/login"  component={Login} />
                    </Switch>
+                   <AddPhotoButton/>
                </div>
             </BrowserRouter>
         )

@@ -14,7 +14,7 @@ class BestPage extends Component
 
                 <Row>
 
-                    <Col lg={5}  md={7}  id={'center'}>
+                    <Col lg={5}  md={5} sm={7} id={'center'}>
 
                         <h2>The best photos</h2>
 
