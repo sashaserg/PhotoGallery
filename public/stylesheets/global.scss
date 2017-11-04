@@ -4,11 +4,38 @@
 @import "PostElement/PostElement";
 @import "UserProfile/UserProfile";
 @import "Login/Login";
+@import "Registration/Registration";
 @import "AddPhotoButton/AddPhotoButton";
+@import "Footer/Footer";
+@import "AddPhotoModal/AddPhotoModal";
+
+
 
 body{
   background-color: aliceblue;
+  overflow-y: scroll;
+
+  height: 100%;
 }
+
+.content{
+  padding-bottom: 50px;
+
+}
+
+.wrapper {
+  position: relative;
+  min-height: 100%;
+}
+
+.footer{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+}
+
 #center{
   float: unset;
   margin-left: auto;

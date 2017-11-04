@@ -2,19 +2,20 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { FormGroup, FormControl, ControlLabel, Button } from 'react-bootstrap'
 
-class Login extends Component
+class Registration extends Component
 {
     constructor(props) {
         super(props);
 
         this.state = {
             email: "",
+            nickname: "",
             password: ""
         };
     }
 
     validateForm() {
-        return this.state.email.length > 0 && this.state.password.length > 0;
+        return this.state.email.length > 0 && this.state.password.length > 0 && this.state.nickname > 0;
     }
 
     handleChange(e){
@@ -29,7 +30,7 @@ class Login extends Component
 
     render() {
         return (
-            <div className="Login">
+            <div className="Registration">
                 <form onSubmit={this.handleSubmit}>
 
                     <FormGroup controlId="email" bsSize="large">
@@ -37,6 +38,16 @@ class Login extends Component
                         <FormControl
                             autoFocus
                             type="email"
+                            value={this.state.email}
+                            onChange={(e) => this.handleChange(e)}
+                        />
+                    </FormGroup>
+
+                    <FormGroup controlId="nickname" bsSize="large">
+                        <ControlLabel>Email</ControlLabel>
+                        <FormControl
+                            autoFocus
+                            type="nickname"
                             value={this.state.email}
                             onChange={(e) => this.handleChange(e)}
                         />
@@ -57,7 +68,7 @@ class Login extends Component
                         disabled={!this.validateForm()}
                         type="submit"
                     >
-                        Войти
+                        Зарегистрировать
                     </Button>
 
                 </form>
@@ -66,8 +77,8 @@ class Login extends Component
 
                 <div className={"text-center"}>
 
-                    <span>Нет учетной записи? </span>
-                    <Link to={'/registration'}>Регистрация</Link>
+                    <span>Уже есть учетная запись? </span>
+                    <Link to={'/login'}>Вход</Link>
 
                 </div>
 
@@ -79,4 +90,4 @@ class Login extends Component
 
 }
 
-export default Login;
+export default Registration;

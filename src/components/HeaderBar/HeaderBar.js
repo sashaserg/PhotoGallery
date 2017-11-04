@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { Navbar, Nav, Col, Grid, Row, NavItem, Button } from 'react-bootstrap'
+import { Navbar, Nav, Col, Grid, Row, NavItem } from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
 
 
@@ -64,7 +64,7 @@ class HeaderBar extends Component
                                         </NavItem>
                                     </LinkContainer>
 
-                                    <LinkContainer  to={'/login'}>
+                                    <LinkContainer  to={'/registration'}>
                                         <NavItem>
                                             <span>Регистрация</span>
                                         </NavItem>

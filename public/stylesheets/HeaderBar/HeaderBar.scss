@@ -1,4 +1,7 @@
 .navbar{
-  border-radius: 0px;
+  border-radius: 0;
   background-color: rgb(225, 234, 243);
+}
+.navbar-nav>.active>a:hover{
+  background-color: #c4cbd4;
 }

@@ -33,7 +33,16 @@
 }
 
 .PEBSymbol, .PEBLikesCount, .PEBUserComments{
-  padding: 10px 16px;
+  padding: 5px 16px;
+}
+
+.PEBUserComments{
+  padding-top: 0;
+}
+
+.PEBUserComments a {
+  cursor: pointer;
+  color: gray;
 }
 
 .PEFooter{

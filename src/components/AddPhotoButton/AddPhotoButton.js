@@ -17,8 +17,6 @@ class AddPhotoButton extends Component
 
             <Button className={"btn-circle btn-lg"} id={"AddPhotoButton"}><Glyphicon glyph="camera" /></Button>
 
-
-
         )
     }
 

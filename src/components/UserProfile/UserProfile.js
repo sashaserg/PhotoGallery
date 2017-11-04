@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { FormControl, Button, Grid, Col, Row, Image} from 'react-bootstrap'
+import { Grid, Col, Row, Image} from 'react-bootstrap'
 
 
 class UserProfile extends Component
@@ -194,11 +194,7 @@ class UserProfile extends Component
 
                     <Col lg={8} md={8} sm={8} lgOffset={2} mdOffset={2} smOffset={2}>
 
-                        <Row>
-
-                            <p className={'text-center'}>Галерея</p>
-
-                        </Row>
+                        <hr/>
 
                         <Row id={"UPBPhotos"}>
 
