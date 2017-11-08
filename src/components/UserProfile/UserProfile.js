@@ -96,6 +96,7 @@ class UserProfile extends Component
 
     fetchRoles()
     {
+
         const self = this;
         const action = "/api/role";
 

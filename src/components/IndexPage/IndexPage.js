@@ -11,10 +11,20 @@ class IndexPage extends Component
     constructor(props)
     {
         super(props);
+        this.state = {
+            last:[]
+        }
+    }
+
+
+
+    componentWillMount(){
+        this.fetchLast(15);
     }
 
     render()
     {
+        const last = this.state.last.map((lastItem) => {return(<PostElement userId={lastItem.user_id}/>);});
         return  (
             <Grid fluid={true}>
 
@@ -26,11 +36,9 @@ class IndexPage extends Component
 
                         <div id={'PhotosList'}>
 
-                            <PostElement/>
-
-                            <PostElement/>
-
-                            <PostElement/>
+                            {
+                                last
+                            }
 
                         </div>
 
@@ -45,8 +53,51 @@ class IndexPage extends Component
 
         )
     }
-}
 
+    fetchLast(count = 15)
+    {
+        const self = this; // this может меняться
+        const action = "/api/last/" + count; // куда посылаем
+
+        fetch(action,
+            {
+                headers:
+                    {
+                        'Accept' : 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+
+                credentials: 'same-origin',
+                method:"GET"
+            })
+            .then(
+                (response) =>
+                {
+                    if (response.status !== 200)
+                    {
+                        console.log('Looks like there was a problem. Status Code: ' +
+                            response.status);
+                        return;
+                    }
+
+                    response.json().then((data) =>
+                    {
+                        self.setState({last:data});
+                        console.log(data);
+
+                    });
+                }
+            )
+            .catch(function(err)
+            {
+                console.log('Fetch Error :-S', err);
+            });
+    }
+
+
+
+
+}
 export default IndexPage;
 
 

@@ -1,11 +1,13 @@
 import UserController from "./user";
 import RoleController from "./role";
+import PostElementController from "./postElement";
 
 
 
 export default {
 
     userController:UserController,
-    roleController:RoleController
+    roleController:RoleController,
+    postElementController:PostElementController
 
 }

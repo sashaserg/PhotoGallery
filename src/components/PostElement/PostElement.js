@@ -11,6 +11,8 @@ class PostElement extends Component
         this.state = {};
     }
 
+
+
     render()
     {
         return(
@@ -32,7 +34,7 @@ class PostElement extends Component
 
                         <Link to={"/user/2"}>
 
-                            User Nickname
+                            User Nickname {this.props.userId}
 
                         </Link>
 

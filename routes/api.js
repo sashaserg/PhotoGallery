@@ -51,7 +51,18 @@ router.get('/role/:id', (req, res, next) =>
 
 });
 
+router.get('/last/:count', function(req, res, next)
+{
+    const controller = controllers[ "postElementController" ];
 
+    controller.getLast( req.params.count, ( err, results ) =>
+    {
+        res.json( results );
+        console.log( results );
+    } );
+
+
+});
 
 
 

@@ -23,8 +23,10 @@ router.get('/best', function (req, res, next) {
 
 router.get('/login', function (req, res, next) {
     res.render('index');
-})
+});
 
-
+router.get('/registration', function (req, res, next) {
+    res.render('index');
+});
 
 module.exports = router;
