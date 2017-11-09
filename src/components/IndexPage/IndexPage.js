@@ -22,37 +22,6 @@ class IndexPage extends Component
         this.fetchLast(15);
     }
 
-    render()
-    {
-        const last = this.state.last.map((lastItem) => {return(<PostElement userId={lastItem.user_id}/>);});
-        return  (
-            <Grid fluid={true}>
-
-                <Row>
-
-                    <Col lg={5}  md={5} sm={7} id={'center'}>
-
-                        <h2>The newest photos</h2>
-
-                        <div id={'PhotosList'}>
-
-                            {
-                                last
-                            }
-
-                        </div>
-
-                    </Col>
-
-                </Row>
-
-            </Grid>
-
-
-
-
-        )
-    }
 
     fetchLast(count = 15)
     {
@@ -93,6 +62,43 @@ class IndexPage extends Component
                 console.log('Fetch Error :-S', err);
             });
     }
+
+
+    render()
+    {
+        const last = this.state.last.map((lastItem) => {return(<PostElement key={lastItem.id}
+           userId={lastItem.user_id} user_avatar={lastItem.avatar_url} user_nickname={lastItem.nickname}
+                 post_rating={lastItem.rating} post_pic={lastItem.pic_url} />);});
+        return  (
+            <Grid fluid={true}>
+
+                <Row>
+
+                    <Col lg={5}  md={5} sm={7} id={'center'}>
+
+                        <h2>The newest photos</h2>
+
+                        <div id={'PhotosList'}>
+
+                            {
+                                last
+                            }
+
+                        </div>
+
+                    </Col>
+
+                </Row>
+
+            </Grid>
+
+
+
+
+        )
+    }
+
+
 
 
 

@@ -22,6 +22,18 @@ export default
             handleSQLErr(err, query);
             callback(null, result);
         } );
+    },
+    getBest: function ( count, callback )
+    {
+        const query =  "SELECT pp.id, pp.user_id, pp.date, pp.pic_url, pp.rating, u.avatar_url, u.nickname" +
+            " FROM Gallery.photo_post as pp join Gallery.user as u on pp.user_id = u.id Order by rating desc limit " + count;
+
+        DatabaseController.runQuery( query, function ( err, result )
+        {
+            handleSQLErr(err, query);
+            callback(null, result);
+        } );
+
     }
 
 

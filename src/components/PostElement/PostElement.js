@@ -24,7 +24,7 @@ class PostElement extends Component
 
                         <Link to={'/best'}>
 
-                            <Image src={"http://www.razlib.ru/psihologija/upravlenie_sostojaniem/square.jpg"} circle/>
+                            <Image src={this.props.user_avatar} circle/>
 
                         </Link>
 
@@ -34,7 +34,7 @@ class PostElement extends Component
 
                         <Link to={"/user/2"}>
 
-                            User Nickname {this.props.userId}
+                            {this.props.user_nickname} {this.props.userId}
 
                         </Link>
 
@@ -48,7 +48,7 @@ class PostElement extends Component
 
                         <Link to={"/home"}>
 
-                            <Image src={"https://previews.123rf.com/images/reamolko/reamolko1502/reamolko150200073/36802200-Crispy-cracker-isolated-Crunchy-biscuit-Yellow-square-cookie--Stock-Vector.jpg"}/>
+                            <Image src={this.props.post_pic}/>
 
                         </Link>
 
@@ -62,7 +62,7 @@ class PostElement extends Component
 
                     <div className={"PEBLikesCount"}>
 
-                        <p>У вас 23 нравится</p>
+                        <p>{this.props.post_rating} нравится</p>
 
                     </div>
 

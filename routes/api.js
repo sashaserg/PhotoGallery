@@ -64,6 +64,19 @@ router.get('/last/:count', function(req, res, next)
 
 });
 
+router.get('/best/:count', function(req, res, next)
+{
+    const controller = controllers[ "postElementController" ];
+
+    controller.getBest( req.params.count, ( err, results ) =>
+    {
+        res.json( results );
+        console.log( results );
+    } );
+
+
+});
+
 
 
 module.exports = router;
