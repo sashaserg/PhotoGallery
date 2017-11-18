@@ -8,7 +8,24 @@
 @import "AddPhotoButton/AddPhotoButton";
 @import "Footer/Footer";
 
+@media (max-width: 1000px){
 
+  #center{
+    width: 90%;
+  }
+  #PhotosList{
+    width: 100%;
+  }
+  .PE{
+    margin-bottom: 0;
+    width: 100%;
+    border-radius: 0;
+  }
+  .PEHeader{
+    border-radius: 0;
+  }
+
+}
 
 body{
   background-color: aliceblue;

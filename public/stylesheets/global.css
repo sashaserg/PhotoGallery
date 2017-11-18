@@ -34,7 +34,7 @@ html, body {
   margin-left: 10px; }
 
 .PEBody {
-  background-color: antiquewhite; }
+  background-color: #fff; }
 
 .PEBody a img {
   width: 100%; }
@@ -50,12 +50,13 @@ html, body {
   color: gray; }
 
 .PEFooter .form-group {
-  margin-bottom: 0px; }
+  margin-bottom: 0; }
 
 .PEFooter .form-group-lg .form-control {
   border-radius: 0;
   border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px; }
+  border-bottom-right-radius: 8px;
+  border-color: white; }
 
 #UPHeader {
   margin-top: 30px; }
@@ -111,6 +112,20 @@ html, body {
 .newPhotoHolder {
   width: 100%; }
 
+@media (max-width: 1000px) {
+  #center {
+    width: 90%; }
+
+  #PhotosList {
+    width: 100%; }
+
+  .PE {
+    margin-bottom: 0;
+    width: 100%;
+    border-radius: 0; }
+
+  .PEHeader {
+    border-radius: 0; } }
 body {
   background-color: aliceblue;
   overflow-y: scroll;
