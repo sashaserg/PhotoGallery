@@ -5,12 +5,12 @@ import favicon  from 'serve-favicon';
 import logger  from 'morgan';
 import cookieParser  from 'cookie-parser';
 import bodyParser  from 'body-parser';
-import session from  'express-session';
 
 import index from './routes/index';
 import api from './routes/api';
 
 const app = express();
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
