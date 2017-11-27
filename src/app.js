@@ -11,6 +11,7 @@ import Login from './components/Login/Login'
 import AddPhotoButton from "./components/AddPhotoButton/AddPhotoButton";
 import Registration from "./components/Registration/Registration";
 import Footer from "./components/Footer/Footer";
+import SocialShareButtons from "./components/SocialShareButtons/SocialShareButtons";
 
 
 class App extends Component
@@ -22,6 +23,7 @@ class App extends Component
                <div className={"wrapper"}>          {/*сделал чтобы прижать футер*/}
                    <div className={"content"}>
                        <HeaderBar/>
+                       <SocialShareButtons/>
                        <Switch>
                            <Route exact path = '/' component={IndexPage} />
                            <Route exact path = '/home' component={IndexPage} />
@@ -32,7 +34,6 @@ class App extends Component
                        </Switch>
                        <AddPhotoButton/>
                    </div>
-
                    <div className={"footer"}><Footer/></div>
 
                </div>

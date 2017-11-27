@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { Navbar, Nav, Col, Grid, Row, NavItem } from 'react-bootstrap'
 
 import PostElement from '../PostElement/PostElement'
+import SocialShareButtons from "../SocialShareButtons/SocialShareButtons";
 
 class IndexPage extends Component
 {
@@ -70,7 +71,10 @@ class IndexPage extends Component
            userId={lastItem.user_id} user_avatar={lastItem.avatar_url} user_nickname={lastItem.nickname}
                  post_rating={lastItem.rating} post_pic={lastItem.pic_url} />);});
         return  (
+
             <Grid fluid={true}>
+
+
 
                 <Row>
 
@@ -91,7 +95,6 @@ class IndexPage extends Component
                 </Row>
 
             </Grid>
-
 
 
 
