@@ -36,6 +36,23 @@ export default
         } );
     },
 
+    //
+    // Create the new post
+    //
+
+    createPost: function ( params, callback )
+    {
+        const query = "Insert into photo_post values ()";
+
+        DatabaseController.runQuery( query, function ( err, result )
+            {
+                handleSQLErr(err, query);
+                callback(null, result);
+            }
+        );
+    },
+
+
     getByLogin: function ( login, callback  )
     {
         const query =  "SELECT id, login, mail, password, role " +

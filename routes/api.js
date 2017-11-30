@@ -27,6 +27,25 @@ router.get('/user/:id', function(req, res, next)
 
 });
 
+//
+// Create the new post
+//
+
+router.get('/user/:id/newPost', function(req, res, next)
+{
+    const controller = controllers[ "userController" ];
+
+    controller.createPost( req.params, ( err, results ) =>
+    {
+        res.json( results );
+    } );
+
+
+});
+
+
+
+
 router.get('/role', (req, res, next) =>
 {
 
