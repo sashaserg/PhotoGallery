@@ -20,25 +20,33 @@ export default
 
         DatabaseController.runQuery( query, function ( err, result )
         {
-            handleSQLErr(err, query);
-            callback(null, result);
+            handleSQLErr( err, query );
+            callback( null, result );
         } );
     },
 
     getById: function ( id, callback  )
     {
-        const query =  "SELECT u.id, u.name, r.name as Role from Gallery.user u Inner Join Gallery.role as r On u.role = r.id where u.id = " + id;
+        const query =  "SELECT * from Gallery.user u Where u.id = " + id;
 
         DatabaseController.runQuery( query, function ( err, result )
         {
-            handleSQLErr(err, query);
-            callback(null, result[0]);
+            handleSQLErr( err, query );
+            callback( null, result );
         } );
     },
 
-    //
-    // Create the new post
-    //
+    getPhotosById: function ( id, callback  )
+    {
+        const query =  "SELECT pic_url FROM Gallery.photo_post where user_id = " + id;
+
+        DatabaseController.runQuery( query, function ( err, result )
+        {
+            handleSQLErr( err, query );
+            callback( null, result );
+        } );
+    },
+
 
     createPost: function ( params, callback )
     {
@@ -46,8 +54,8 @@ export default
 
         DatabaseController.runQuery( query, function ( err, result )
             {
-                handleSQLErr(err, query);
-                callback(null, result);
+                handleSQLErr( err, query );
+                callback( null, result );
             }
         );
     },

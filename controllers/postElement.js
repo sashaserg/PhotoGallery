@@ -34,6 +34,18 @@ export default
             callback(null, result);
         } );
 
+    },
+    getCommentByPostId: function ( id, callback )
+    {
+      const query = "SELECT com.id_post, com.text, us.name, com.id_user FROM Gallery.comment com join Gallery.user us on com.id_user = us.id where com.id_post =" + id;
+
+      DatabaseController.runQuery( query, function ( err, result )
+          {
+
+              handleSQLErr( err, query );
+              callback( null, result );
+          }
+      );
     }
 
 

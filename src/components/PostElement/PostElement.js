@@ -8,13 +8,72 @@ class PostElement extends Component
     {
         super(props);
 
-        this.state = {};
+        this.state = {
+            comments:[]
+        };
     }
 
+
+    componentWillMount()
+    {
+        this.fetchComments( this.props.postId )
+    }
+
+    fetchComments( id_post = 3 )
+    {
+        console.log("fetchComments");
+        const self = this; // this может меняться
+        const action = "/api/comments/" + id_post; // куда посылаем
+
+        fetch(action,
+            {
+                headers:
+                    {
+                        'Accept' : 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+
+                credentials: 'same-origin',
+                method:"GET"
+            })
+            .then(
+                (response) =>
+                {
+                    if (response.status !== 200)
+                    {
+                        console.log('Looks like there was a problem. Status Code: ' +
+                            response.status);
+                        return;
+                    }
+
+                    response.json().then((data) =>
+                    {
+                        self.setState({comments:data});
+                        console.log(data);
+
+                    });
+                }
+            )
+            .catch(function(err)
+            {
+                console.log('Fetch Error :-S', err);
+            });
+    }
 
 
     render()
     {
+
+        const comments = this.state.comments.map( ( comment ) => {
+
+           return(
+               <div>
+                   {comment.name + ": " + comment.text}
+               </div>
+           );
+
+        });
+
         return(
             <div className={"PE"}>
 
@@ -22,7 +81,7 @@ class PostElement extends Component
 
                     <div className={"PEHUserImage"}>
 
-                        <Link to={'/best'}>
+                        <Link to={'/user/' + this.props.userId}>
 
                             <Image src={this.props.user_avatar} circle/>
 
@@ -32,9 +91,9 @@ class PostElement extends Component
 
                     <div className={"PEHUserNickname"}>
 
-                        <Link to={"/user/2"}>
+                        <Link to={'/user/' + this.props.userId}>
 
-                            {this.props.user_nickname} {this.props.userId}
+                            {this.props.user_nickname}
 
                         </Link>
 
@@ -56,7 +115,7 @@ class PostElement extends Component
 
                     <div className={"PEBSymbol"}>
 
-                        <Glyphicon glyph={"heart"}/>
+                        Мне нравится
 
                     </div>
 
@@ -75,8 +134,10 @@ class PostElement extends Component
                         <Collapse in={this.state.c_open}>
 
                             <div>
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-                                Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+
+                                {
+                                    comments
+                                }
 
                             </div>
 

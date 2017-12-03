@@ -3,6 +3,30 @@ const router = express.Router();
 import controllers from "../controllers/index";
 
 
+router.get('/user/:id/photos', ( req, res, next ) =>
+{
+
+    const controller = controllers[ "userController" ];
+
+    controller.getPhotosById( req.params.id, ( err, results ) =>
+    {
+        res.json( results );
+    });
+
+});
+
+router.get('/user/:id', function(req, res, next)
+{
+    const controller = controllers[ "userController" ];
+
+    controller.getById( req.params.id, ( err, results ) =>
+    {
+        res.json( results[0] );
+    } );
+
+
+});
+
 router.get('/user', (req, res, next) =>
 {
 
@@ -15,33 +39,6 @@ router.get('/user', (req, res, next) =>
 
 });
 
-router.get('/user/:id', function(req, res, next)
-{
-    const controller = controllers[ "userController" ];
-
-    controller.getById( req.params.id, ( err, results ) =>
-    {
-        res.json( results );
-    } );
-
-
-});
-
-//
-// Create the new post
-//
-
-router.get('/user/:id/newPost', function(req, res, next)
-{
-    const controller = controllers[ "userController" ];
-
-    controller.createPost( req.params, ( err, results ) =>
-    {
-        res.json( results );
-    } );
-
-
-});
 
 
 
@@ -94,6 +91,17 @@ router.get('/best/:count', function(req, res, next)
     } );
 
 
+});
+
+router.get('/comments/:id', function( req, res, next)
+{
+    const controller = controllers[ "postElementController" ];
+
+    controller.getCommentByPostId( req.params.id, ( err, result ) =>
+    {
+       res.json( result );
+       console.log( result );
+    });
 });
 
 

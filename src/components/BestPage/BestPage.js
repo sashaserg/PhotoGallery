@@ -66,7 +66,7 @@ class BestPage extends Component
     render()
     {
 
-        const best = this.state.best.map((bestItem) => {return(<PostElement key={bestItem.id}
+        const best = this.state.best.map((bestItem) => {return(<PostElement key={bestItem.id} postId={bestItem.id}
               userId={bestItem.user_id} user_avatar={bestItem.avatar_url} user_nickname={bestItem.nickname}
                      post_rating={bestItem.rating} post_pic={bestItem.pic_url} />);});
 

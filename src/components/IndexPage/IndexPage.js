@@ -19,7 +19,8 @@ class IndexPage extends Component
 
 
 
-    componentWillMount(){
+    componentWillMount()
+    {
         this.fetchLast(15);
     }
 
@@ -67,14 +68,16 @@ class IndexPage extends Component
 
     render()
     {
-        const last = this.state.last.map((lastItem) => {return(<PostElement key={lastItem.id}
-           userId={lastItem.user_id} user_avatar={lastItem.avatar_url} user_nickname={lastItem.nickname}
-                 post_rating={lastItem.rating} post_pic={lastItem.pic_url} />);});
+        const last = this.state.last.map( ( lastItem ) =>
+        {
+            return( <PostElement key={ lastItem.id } postId={ lastItem.id } userId={ lastItem.user_id }
+            user_avatar={ lastItem.avatar_url } user_nickname={ lastItem.nickname }
+            post_rating={ lastItem.rating } post_pic={ lastItem.pic_url } /> );
+        });
+
         return  (
 
             <Grid fluid={true}>
-
-
 
                 <Row>
 
