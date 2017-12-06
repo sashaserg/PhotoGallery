@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { Grid, Col, Row, Image} from 'react-bootstrap'
+import { Grid, Col, Row, Image, Modal, Button} from 'react-bootstrap'
 
 
 class UserProfile extends Component
@@ -12,7 +12,11 @@ class UserProfile extends Component
         this.state = {
             userId: this.props.match.params.id,
             userInfo: {},
-            userPhotos: []
+            userPhotos: [],
+            showPhotoModal: false,
+            curModalPhotoUrl: "",
+            curModalPhotoRating: 0,
+            curModalPhotoDate: ""
         };
     }
 
@@ -21,6 +25,19 @@ class UserProfile extends Component
         this.fetchUser();
         this.fetchUserPhotos();
 
+    }
+
+    closePhotoModal() {
+        this.setState({ showPhotoModal: false });
+
+    }
+
+    openPhotoModal( photoUrl, photoDate, photoRating ) {
+        this.setState({ curModalPhotoUrl: photoUrl });
+        this.setState({ curModalPhotoRating: photoRating });
+        this.setState({ curModalPhotoDate: photoDate });
+
+        this.setState({ showPhotoModal: true });
     }
 
     fetchUserPhotos()
@@ -111,7 +128,7 @@ class UserProfile extends Component
         {
            return( <Col lg={4} md={4} sm={4}>
 
-               <Image  src={ photo.pic_url }/>
+                   <Image  onClick = { (e) => { this.openPhotoModal( photo.pic_url, photo.date, photo.rating ) } } src={ photo.pic_url } />
 
            </Col> );
         });
@@ -136,7 +153,7 @@ class UserProfile extends Component
 
                                 <Row>
 
-                                    <Col lg={6} md={6} sm={6}>
+                                    <Col lg={6} md={6} sm={6} id={"UPHUserNickname"}>
 
                                         {
                                             this.state.userInfo.nickname
@@ -154,7 +171,7 @@ class UserProfile extends Component
 
                                 <Row>
 
-                                    <Col lg={10} md={10} sm={10}>
+                                    <Col lg={10} md={10} sm={10} id={"UPHUserName"}>
 
                                         {
                                             this.state.userInfo.name
@@ -195,6 +212,42 @@ class UserProfile extends Component
 
 
                 </Row>
+
+                <Modal show={this.state.showPhotoModal} onHide = { (e) => { this.closePhotoModal(e) }   }>
+
+                    <Modal.Header closeButton>
+
+                        <Modal.Title> Фотография </Modal.Title>
+
+                    </Modal.Header>
+
+                    <Modal.Body>
+
+                        <div>
+
+                            <img className={"newPhotoHolder"} src={ this.state.curModalPhotoUrl }/>
+
+                        </div>
+
+                        <div id={"PhotoModalRating"}>
+
+                            <span className={"text-red"}>
+                            { this.state.curModalPhotoRating + " "}
+                            </span>
+
+                            Мне нравится
+
+                        </div>
+
+                    </Modal.Body>
+
+                    <Modal.Footer>
+
+                        <Button onClick = { (e) => { this.closePhotoModal(e) }   } bsStyle={"success"}>Закрыть</Button>
+                    </Modal.Footer>
+                </Modal>
+
+
         </Grid>
     )
     }

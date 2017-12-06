@@ -37,7 +37,8 @@ export default
     },
     getCommentByPostId: function ( id, callback )
     {
-      const query = "SELECT com.id_post, com.text, us.name, com.id_user FROM Gallery.comment com join Gallery.user us on com.id_user = us.id where com.id_post =" + id;
+      const query = "SELECT com.id_post, com.text, us.name, us.nickname, com.id_user FROM Gallery.comment com join Gallery.user us" +
+          " on com.id_user = us.id where com.id_post =" + id;
 
       DatabaseController.runQuery( query, function ( err, result )
           {

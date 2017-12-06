@@ -4,7 +4,7 @@ html, body {
 
 .navbar {
   border-radius: 0;
-  background-color: #e1eaf3; }
+  background-color: #c0c8d1; }
 
 .navbar-nav > .active > a:hover {
   background-color: #c4cbd4; }
@@ -61,6 +61,12 @@ html, body {
 #UPHeader {
   margin-top: 30px; }
 
+#UPHUserNickname {
+  font-size: 24px; }
+
+#UPHUserName {
+  color: gray; }
+
 #UPHUserPhoto img {
   width: 150px;
   height: 150px;
@@ -75,6 +81,13 @@ html, body {
 
 #UPBody hr {
   border-top: 1px solid #e7e7e7; }
+
+#UPBPhotos img {
+  cursor: pointer; }
+
+#PhotoModalRating {
+  padding-left: 5px;
+  margin-top: 8px; }
 
 .Login {
   padding: 60px 0; }
@@ -152,5 +165,11 @@ body {
 
 #PhotosList {
   padding-top: 40px; }
+
+.addthis_counter {
+  padding-left: 20px; }
+
+.text-red {
+  color: #ff374a; }
 
 /*# sourceMappingURL=global.css.map */

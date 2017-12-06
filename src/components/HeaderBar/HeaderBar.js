@@ -54,7 +54,7 @@ class HeaderBar extends Component
 
                                     <LinkContainer  to={'/user/1'}>
                                         <NavItem>
-                                            <span>Никнейм</span>
+                                            <span>Samec221</span>
                                         </NavItem>
                                     </LinkContainer>
 

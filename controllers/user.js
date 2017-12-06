@@ -38,7 +38,7 @@ export default
 
     getPhotosById: function ( id, callback  )
     {
-        const query =  "SELECT pic_url FROM Gallery.photo_post where user_id = " + id;
+        const query =  "SELECT * FROM Gallery.photo_post where user_id = " + id;
 
         DatabaseController.runQuery( query, function ( err, result )
         {

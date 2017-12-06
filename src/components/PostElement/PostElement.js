@@ -68,7 +68,10 @@ class PostElement extends Component
 
            return(
                <div>
-                   {comment.name + ": " + comment.text}
+
+                   <span> { comment.nickname + ": " } </span>
+                   <span> <a href={ "user/" + comment.id_user } >{ comment.text } </a></span>
+
                </div>
            );
 
@@ -121,7 +124,7 @@ class PostElement extends Component
 
                     <div className={"PEBLikesCount"}>
 
-                        <p>{this.props.post_rating} нравится</p>
+                        <p><span className={ "text-red" }>{this.props.post_rating} </span>Мне нравится</p>
 
                     </div>
 
