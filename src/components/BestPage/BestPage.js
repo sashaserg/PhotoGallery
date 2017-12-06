@@ -77,7 +77,7 @@ class BestPage extends Component
 
                     <Col lg={5}  md={5} sm={7} id={'center'}>
 
-                        <h2>The best photos</h2>
+                        <h2>Лучшие публикации</h2>
 
                         <div id={'PhotosList'}>
 

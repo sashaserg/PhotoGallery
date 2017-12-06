@@ -35,7 +35,7 @@ class AddPhotoButton extends Component
                     </Modal.Header>
                     <Modal.Body>
 
-                        <form encType={"multipart/form-data"} method={"POST"}>
+                        <form encType={"multipart/form-data"} method={"POST"} action={"/api/user/1/createPost"}>
 
                             <FormGroup controlId="file" bsSize="large">
                                 <ControlLabel>Фотография</ControlLabel>
@@ -55,8 +55,8 @@ class AddPhotoButton extends Component
 
                         </Modal.Body>
                     <Modal.Footer>
-                        <Button onClick = { (e) => { this.closeModalAddPhoto(e) }   } bsStyle={"success"}>Опубликовать</Button>
-                        <Button onClick = { (e) => { this.closeModalAddPhoto(e) }   } bsStyle={"danger"}>Отмена</Button>
+                        <Button onClick = { (e) => { this.closeModalAddPhoto(e) } } bsStyle={"success"}>Опубликовать</Button>
+                        <Button onClick = { (e) => { this.closeModalAddPhoto(e) } } bsStyle={"danger"}>Отмена</Button>
                     </Modal.Footer>
                 </Modal>
 

@@ -3,6 +3,13 @@ const router = express.Router();
 import controllers from "../controllers/index";
 
 
+router.post('/user/:id/createPost', (req, res, next) =>
+{
+    console.log("post");
+    next();
+
+});
+
 router.get('/user/:id/photos', ( req, res, next ) =>
 {
 
@@ -38,7 +45,6 @@ router.get('/user', (req, res, next) =>
     } );
 
 });
-
 
 
 
