@@ -47,10 +47,10 @@ export default
         } );
     },
 
-
-    createPost: function ( params, callback )
+/*
+    createPost: function ( id_user, pic_url, callback )
     {
-        const query = "Insert into photo_post values ()";
+        const query = "Insert into photo_post set user_id=1, pic_url=https://c1.staticflickr.com/1/382/32621968382_1533ff021d_b.jpg";
 
         DatabaseController.runQuery( query, function ( err, result )
             {
@@ -60,7 +60,7 @@ export default
         );
     },
 
-
+*/
     getByLogin: function ( login, callback  )
     {
         const query =  "SELECT id, login, mail, password, role " +

@@ -23,7 +23,49 @@ class AddPhotoButton extends Component
     openModalAddPhoto() {
         this.setState({ showModal: true });
     }
+/*
+    fetchCreatePost()
+    {
+        console.log("1");
 
+        const self = this; // this может меняться
+        const action = "/api/user/1/createPost"; // куда посылаем
+
+        fetch(action,
+            {
+                headers:
+                    {
+                        'Accept' : 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+
+                credentials: 'same-origin',
+                method:"POST"
+            })
+            .then(
+                (response) =>
+                {
+                    if (response.status !== 200)
+                    {
+                        console.log('Looks like there was a problem. Status Code: ' +
+                            response.status);
+                        return;
+                    }
+
+                    response.json().then((data) =>
+                    {
+                        console.log("good");
+
+                    });
+                }
+            )
+            .catch(function(err)
+            {
+                console.log('Fetch Error :-S', err);
+            });
+
+    }
+*/
     render()
     {
         return(
@@ -55,7 +97,7 @@ class AddPhotoButton extends Component
 
                         </Modal.Body>
                     <Modal.Footer>
-                        <Button onClick = { (e) => { this.closeModalAddPhoto(e) } } bsStyle={"success"}>Опубликовать</Button>
+                        <Button onClick = { (e) => { /*this.fetchCreatePost();*/ this.closeModalAddPhoto(e) } } bsStyle={"success"}>Опубликовать</Button>
                         <Button onClick = { (e) => { this.closeModalAddPhoto(e) } } bsStyle={"danger"}>Отмена</Button>
                     </Modal.Footer>
                 </Modal>

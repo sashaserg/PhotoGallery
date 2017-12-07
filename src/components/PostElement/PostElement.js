@@ -9,14 +9,29 @@ class PostElement extends Component
         super(props);
 
         this.state = {
-            comments:[]
+            comments:[],
+            rating_bool: true
         };
     }
 
 
     componentWillMount()
     {
-        this.fetchComments( this.props.postId )
+        this.fetchComments( this.props.postId );
+        this.setState({rating: this.props.post_rating});
+    }
+
+    updateRating()
+    {
+        if(this.state.rating_bool)
+        {
+            this.setState({rating: this.state.rating + 1});
+        }
+        else
+        {
+            this.setState({rating: this.state.rating - 1});
+        }
+        this.setState({rating_bool: !this.state.rating_bool});
     }
 
     fetchComments( id_post = 3 )
@@ -69,8 +84,10 @@ class PostElement extends Component
            return(
                <div>
 
-                   <span> { comment.nickname + ": " } </span>
-                   <span> <a href={ "user/" + comment.id_user } >{ comment.text } </a></span>
+                   <span>
+                       <a href={ "user/" + comment.id_user }> { comment.nickname + ": " } </a>
+                        </span>
+                   <span> { comment.text } </span>
 
                </div>
            );
@@ -118,13 +135,13 @@ class PostElement extends Component
 
                     <div className={"PEBSymbol"}>
 
-                        Мне нравится
+                        <p onClick={ (e) => { this.updateRating() } }>Мне нравится</p>
 
                     </div>
 
                     <div className={"PEBLikesCount"}>
 
-                        <p><span className={ "text-red" }>{this.props.post_rating} </span>Мне нравится</p>
+                        <p><span className={ "text-red" }>{this.state.rating} </span>Мне нравится</p>
 
                     </div>
 

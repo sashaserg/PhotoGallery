@@ -52,9 +52,9 @@ class HeaderBar extends Component
                                 
                                 <Nav pullRight>
 
-                                    <LinkContainer  to={'/user/1'}>
+                                    <LinkContainer  to={'/user/4'}>
                                         <NavItem>
-                                            <span>Samec221</span>
+                                            <span>AntonCupidon</span>
                                         </NavItem>
                                     </LinkContainer>
 

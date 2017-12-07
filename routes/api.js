@@ -2,14 +2,6 @@ import express from 'express'
 const router = express.Router();
 import controllers from "../controllers/index";
 
-
-router.post('/user/:id/createPost', (req, res, next) =>
-{
-    console.log("post");
-    next();
-
-});
-
 router.get('/user/:id/photos', ( req, res, next ) =>
 {
 
@@ -45,9 +37,21 @@ router.get('/user', (req, res, next) =>
     } );
 
 });
+/*
+router.post('/user/1/createPost', (req, res, next) =>
+{
+    const controller = controllers[ "userController" ];
+
+    controller.createPost(1, "123", ( err, results)  =>
+    {
+        console.log("POST");
+        res.json( "POST" );
+
+    } );
 
 
-
+});
+*/
 
 router.get('/role', (req, res, next) =>
 {
